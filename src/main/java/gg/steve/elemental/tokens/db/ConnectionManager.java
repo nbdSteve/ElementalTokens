@@ -20,7 +20,6 @@ public class ConnectionManager {
     public void connect() {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
-//            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elemental", "root", "");
         } catch (SQLException e) {
             e.printStackTrace();
             // Could not connect?

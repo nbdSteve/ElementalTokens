@@ -25,3 +25,6 @@ commands:
       - tokenadmin
       - tokensadmin
       - etadmin
+  tshop:
+    usage: /<command>
+    description: Opens the token shop gui.

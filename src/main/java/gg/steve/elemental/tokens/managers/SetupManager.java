@@ -2,9 +2,11 @@ package gg.steve.elemental.tokens.managers;
 
 import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.cmd.AdminCmd;
+import gg.steve.elemental.tokens.cmd.GuiCmd;
 import gg.steve.elemental.tokens.cmd.PrestigeCmd;
 import gg.steve.elemental.tokens.cmd.TokensCmd;
 import gg.steve.elemental.tokens.core.PlayerTokenManager;
+import gg.steve.elemental.tokens.gui.GuiClickListener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
@@ -34,6 +36,7 @@ public class SetupManager {
         instance.getCommand("tokens").setExecutor(new TokensCmd());
         instance.getCommand("prestige").setExecutor(new PrestigeCmd());
         instance.getCommand("eta").setExecutor(new AdminCmd());
+        instance.getCommand("tshop").setExecutor(new GuiCmd());
     }
 
     /**
@@ -44,5 +47,6 @@ public class SetupManager {
     public static void registerEvents(Plugin instance) {
         PluginManager pm = instance.getServer().getPluginManager();
         pm.registerEvents(new PlayerTokenManager(), instance);
+        pm.registerEvents(new GuiClickListener(), instance);
     }
 }

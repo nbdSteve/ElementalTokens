@@ -6,6 +6,7 @@ command:
     token: tokens.pay.token
     prestige: tokens.pay.prestige
   help: tokens.help
+  shop-gui: tokens.gui
 
 admin:
   reload: tokens.admin.reload

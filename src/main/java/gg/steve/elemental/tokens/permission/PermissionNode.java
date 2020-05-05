@@ -15,6 +15,7 @@ public enum PermissionNode {
     HELP("command.help"),
     PAY_TOKEN("command.pay.token"),
     PAY_PRESTIGE("command.pay.prestige"),
+    SHOP_GUI("command.shop-gui"),
     BALANCE_TOKEN("command.balance.token"),
     BALANCE_PRESTIGE("command.balance.prestige");
 

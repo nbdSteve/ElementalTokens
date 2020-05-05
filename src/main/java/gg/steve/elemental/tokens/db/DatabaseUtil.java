@@ -25,9 +25,9 @@ public class DatabaseUtil {
                 section.getString("password"),
                 section.getInt("port"));
         connectionManager.connect();
-        LogUtil.info("Successfully connected to the SQL database.");
         generateTables();
         loadTokenData();
+        LogUtil.info("Successfully connected to the SQL database, and loaded online player data.");
         return connectionManager;
     }
 
@@ -47,16 +47,6 @@ public class DatabaseUtil {
         PlayerTokenManager.initialise();
         if (Bukkit.getOnlinePlayers().isEmpty()) return;
         Connection connection = connectionManager.getConnection();
-//        try {
-//            PreparedStatement query = connection.prepareStatement("SELECT * FROM tokens");
-//            ResultSet rs = query.executeQuery();
-//
-//            while (rs.next()) {
-//                LogUtil.info(rs.getString("uuid"));
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
         for (Player player : Bukkit.getOnlinePlayers()) {
             try {
                 LogUtil.info(player.getUniqueId().toString());
@@ -87,6 +77,7 @@ public class DatabaseUtil {
                 e.printStackTrace();
             }
         }
+        LogUtil.info("All token data for players who have not yet disconnected has been saved.");
     }
 
     public static void loadPlayerTokenData(UUID playerId) {
@@ -99,6 +90,7 @@ public class DatabaseUtil {
             } else {
                 PlayerTokenManager.addTokenPlayer(playerId, 0, 0);
             }
+            LogUtil.info("Successfully loaded token data for player: " + playerId + ".");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -114,6 +106,7 @@ public class DatabaseUtil {
             set.setInt(3, PlayerTokenManager.getTokens(playerId, TokenType.PRESTIGE));
             set.executeUpdate();
             set.close();
+            LogUtil.info("Successfully saved token data for player: " + playerId + ".");
         } catch (SQLException e) {
             e.printStackTrace();
         }

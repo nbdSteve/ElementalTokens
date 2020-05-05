@@ -11,3 +11,58 @@ database:
   username: 'root'
   password: ''
   port: 3306
+
+gui:
+  name: '&b&lELEMENTAL TOKEN SHOP'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: token-enchant
+    name: '&6&lToken Enchantments'
+    item: double_plant
+    owner: owner
+    data: 0
+    lore:
+      - ''
+      - '&7Click to view the token enchantments.'
+    enchantments:
+    item-flags:
+      - hide_attributes
+  2:
+    slot: 1
+    action: backpack
+    name: '&A&lBackpack'
+    item: chest
+    data: 0
+    lore:
+      - ''
+      - '&7Click to view token backpack upgrades.'
+    enchantments:
+    item-flags:
+      - hide_attributes
+  3:
+    slot: 2
+    action: prestige-enchantments
+    name: '&b&lPrestige Token Enchantments'
+    item: magma_cream
+    data: 0
+    lore:
+      - ''
+      - '&7Click to view the prestige token enchantments.'
+    enchantments:
+    item-flags:
+      - hide_attributes
+  4:
+    slot: 4
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes
