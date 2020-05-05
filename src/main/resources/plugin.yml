@@ -1,0 +1,27 @@
+name: ElementalTokens
+version: ${project.version}
+main: gg.steve.elemental.tokens.ElementalTokens
+api-version: 1.13
+prefix: Tokens
+depend: [PlaceholderAPI]
+authors: [stevegoodhill]
+description: Token currency plugin for ElementalMC.
+commands:
+  tokens:
+    usage: /<command>
+    description: View your token balance, or /tokens pay <player>.
+    aliases:
+      - token
+  prestige:
+    usage: /<command>
+    description: View your prestige token balance, or /prestige pay <player>.
+    aliases:
+      - ptoken
+      - ptokens
+  eta:
+    usage: /<command>
+    description: Admin command for ElementalTokens
+    aliases:
+      - tokenadmin
+      - tokensadmin
+      - etadmin

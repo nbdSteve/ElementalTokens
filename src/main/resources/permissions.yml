@@ -1,0 +1,16 @@
+command:
+  balance:
+    token: tokens.balance.token
+    prestige: tokens.balance.prestige
+  pay:
+    token: tokens.pay.token
+    prestige: tokens.pay.prestige
+  help: tokens.help
+
+admin:
+  reload: tokens.admin.reload
+  add: tokens.admin.add
+  set: tokens.admin.set
+  reset: tokens.admin.reset
+  remove: tokens.admin.remove
+  help: tokens.admin.help

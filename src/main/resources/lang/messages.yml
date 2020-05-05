@@ -1,0 +1,30 @@
+balance:
+  - '&5&lTokens &f>> &7You current &6{token-type} &7balance is &e&l{amount} &7tokens.'
+
+pay-payer:
+  - '&5&lTokens &f>> &7You have payed &6{player} &e&l{amount} &6{token-type} &7tokens.'
+
+pay-receiver:
+  - '&5&lTokens &f>> &7You have received &e&l{amount} &6{token-type} &7tokens from &6{player}.'
+
+help:
+  - '&5&lTokens &f>> &7Please contact nbdSteve#0583 on discord for command, permission and configuration help.'
+
+reload:
+  - '&5&lTokens &f>> &7You have successfully reloaded the plugin and player data.'
+
+insufficient-tokens:
+  - '&5&lTokens &f>> &7You do not have sufficient &6{token-type} &7tokens to complete that action.'
+
+balance-update-giver:
+  - "&5&lTokens &f>> &7You have updated &6{player}&7's &6{token-type} &7balance, new balance: &e&l{amount}&7."
+
+balance-update-receiver:
+  - '&5&lTokens &f>> &7Your &6{token-type} &7balance has been updated, new balance: &e&l{amount}&7.'
+
+admin:
+  help:
+    - '&5&lTokens &f>> &7/eta set, reset, remove, add, bal player token-type amount'
+  #
+  balance:
+    - '&5&lTokens &f>> &7The player &6{player} &7has a balance of &e&l{amount} &6{token-type} &7tokens.'
