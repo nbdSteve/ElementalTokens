@@ -5,6 +5,8 @@ import gg.steve.elemental.tokens.cmd.sub.BalanceCmd;
 import gg.steve.elemental.tokens.cmd.sub.HelpCmd;
 import gg.steve.elemental.tokens.cmd.sub.PayCmd;
 import gg.steve.elemental.tokens.core.TokenType;
+import gg.steve.elemental.tokens.message.CommandDebug;
+import gg.steve.elemental.tokens.message.MessageType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -31,6 +33,9 @@ public class TokensCmd implements CommandExecutor {
                 case "help":
                 case "h":
                     HelpCmd.help(sender);
+                    break;
+                default:
+                    CommandDebug.INVALID_COMMAND.message(sender);
                     break;
             }
         }

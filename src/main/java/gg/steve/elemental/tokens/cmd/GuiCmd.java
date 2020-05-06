@@ -2,7 +2,6 @@ package gg.steve.elemental.tokens.cmd;
 
 import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.message.CommandDebug;
-import gg.steve.elemental.tokens.message.MessageType;
 import gg.steve.elemental.tokens.permission.PermissionNode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

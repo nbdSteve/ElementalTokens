@@ -6,7 +6,7 @@
 
     <groupId>gg.steve.elemental.tokens</groupId>
     <artifactId>ElementalTokens</artifactId>
-    <version>0.3.2</version>
+    <version>0.3.3</version>
     <packaging>jar</packaging>
 
     <name>ElementalTokens</name>
@@ -87,6 +87,13 @@
             <version>0.9.6</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/lib/Backpacks-0.9.6.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>gg.steve.elemental</groupId>
+            <artifactId>ElementalEnchants</artifactId>
+            <version>0.1.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/lib/ElementalEnchants-0.1.1.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

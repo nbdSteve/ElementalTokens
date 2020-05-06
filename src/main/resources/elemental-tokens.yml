@@ -43,7 +43,7 @@ gui:
       - hide_attributes
   3:
     slot: 2
-    action: prestige-enchantments
+    action: prestige-enchant
     name: '&b&lPrestige Token Enchantments'
     item: magma_cream
     data: 0

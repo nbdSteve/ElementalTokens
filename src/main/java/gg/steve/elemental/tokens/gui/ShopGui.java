@@ -1,6 +1,7 @@
 package gg.steve.elemental.tokens.gui;
 
 import gg.steve.elemental.bps.api.BackpacksApi;
+import gg.steve.elemental.ce.api.EnchantsApi;
 import gg.steve.elemental.tokens.utils.GuiItemUtil;
 import org.bukkit.configuration.ConfigurationSection;
 
@@ -33,6 +34,10 @@ public class ShopGui extends AbstractGui {
                         player.closeInventory();
                         break;
                     case "token-enchant":
+                        if (EnchantsApi.getInstance() != null) {
+                            player.closeInventory();
+                            EnchantsApi.openTokenEnchantsGui(player);
+                        }
                         break;
                     case "backpack":
                         if (BackpacksApi.getInstance() != null) {
@@ -41,6 +46,10 @@ public class ShopGui extends AbstractGui {
                         }
                         break;
                     case "prestige-enchant":
+                        if (EnchantsApi.getInstance() != null) {
+                            player.closeInventory();
+                            EnchantsApi.openPrestigeEnchantsGui(player);
+                        }
                         break;
                 }
             });
