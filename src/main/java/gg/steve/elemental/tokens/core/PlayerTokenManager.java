@@ -1,6 +1,9 @@
 package gg.steve.elemental.tokens.core;
 
 import gg.steve.elemental.tokens.db.DatabaseUtil;
+import gg.steve.elemental.tokens.event.AddMethodType;
+import gg.steve.elemental.tokens.event.PreTokenAddEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -50,9 +53,9 @@ public class PlayerTokenManager implements Listener {
         return true;
     }
 
-    public static void addTokens(TokenType type, UUID playerId, int amount) {
+    public static void addTokens(TokenType type, UUID playerId, int amount, AddMethodType addMethod) {
         if (!tokenPlayers.containsKey(playerId)) DatabaseUtil.loadPlayerTokenData(playerId);
-        tokenPlayers.get(playerId).addTokens(type, amount);
+        Bukkit.getPluginManager().callEvent(new PreTokenAddEvent(tokenPlayers.get(playerId), type, amount, addMethod));
     }
 
     public static void removeTokens(TokenType type, UUID playerId, int amount) {

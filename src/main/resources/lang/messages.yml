@@ -22,6 +22,12 @@ balance-update-giver:
 balance-update-receiver:
   - '&5&lTokens &f>> &7Your &6{token-type} &7balance has been updated, new balance: &e&l{amount}&7.'
 
+mine-add-tokens:
+  - '&5&lTokens &f>> &7You just found &e&l{found}x &6{token-type} &7while mining, new balance: &e&l{amount}&7.'
+
+tokenator-add-tokens:
+  - '&5&lTokens &f>> &6Tokenator &7has proced and doubled your found tokens, you found &e&l{found}x &6{token-type} &7while mining, new balance: &e&l{amount}&7.'
+
 admin:
   help:
     - '&5&lTokens &f>> &7/eta set, reset, remove, add, bal player token-type amount'

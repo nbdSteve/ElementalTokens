@@ -16,6 +16,8 @@ public enum MessageType {
     PAY_RECEIVER("give-piece-receiver", "{player}", "{amount}", "{token-type}"),
     INSUFFICIENT_TOKENS("insufficient-tokens", "{token-type}"),
     BALANCE("balance", "{token-type}", "{amount}"),
+    MINE_ADD_TOKENS("mine-add-tokens", "{found}", "{token-type}", "{amount}"),
+    TOKENATOR_ADD_TOKENS("tokenator-add-tokens", "{found}", "{token-type}", "{amount}"),
     // admin messages
     BALANCE_UPDATE_GIVER("balance-update-giver", "{player}", "{token-type}", "{amount}"),
     BALANCE_UPDATE_RECEIVER("balance-update-receiver", "{token-type}", "{amount}"),

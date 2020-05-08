@@ -4,6 +4,7 @@ import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.core.PlayerTokenManager;
 import gg.steve.elemental.tokens.core.TokenPlayer;
 import gg.steve.elemental.tokens.core.TokenType;
+import gg.steve.elemental.tokens.event.AddMethodType;
 
 import java.util.UUID;
 
@@ -21,8 +22,8 @@ public class TokensApi {
         return PlayerTokenManager.getTokenPlayer(playerId);
     }
 
-    public static void addTokens(TokenType type, UUID playerId, int amount) {
-        PlayerTokenManager.addTokens(type, playerId, amount);
+    public static void addTokens(TokenType type, UUID playerId, int amount, AddMethodType addMethod) {
+        PlayerTokenManager.addTokens(type, playerId, amount, addMethod);
     }
 
     public static void removeTokens(TokenType type, UUID playerId, int amount) {

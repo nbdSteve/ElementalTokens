@@ -3,6 +3,7 @@ package gg.steve.elemental.tokens.cmd.admin;
 import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.core.PlayerTokenManager;
 import gg.steve.elemental.tokens.core.TokenType;
+import gg.steve.elemental.tokens.event.AddMethodType;
 import gg.steve.elemental.tokens.message.CommandDebug;
 import gg.steve.elemental.tokens.message.MessageType;
 import gg.steve.elemental.tokens.permission.PermissionNode;
@@ -43,7 +44,7 @@ public class AddCmd {
             CommandDebug.INVALID_AMOUNT.message(sender);
             return;
         }
-        PlayerTokenManager.addTokens(type, target, amount);
+        PlayerTokenManager.addTokens(type, target, amount, AddMethodType.COMMAND);
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (!player.getUniqueId().equals(target)) {
