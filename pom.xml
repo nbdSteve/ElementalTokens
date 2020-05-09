@@ -82,6 +82,11 @@
             <version>2.10.3</version>
         </dependency>
         <dependency>
+            <groupId>com.github.shynixn.headdatabase</groupId>
+            <artifactId>hdb-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
             <groupId>gg.steve.elemental</groupId>
             <artifactId>Backpacks</artifactId>
             <version>0.9.6</version>
@@ -94,6 +99,13 @@
             <version>0.1.1</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/lib/ElementalEnchants-0.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>gg.steve.elemental</groupId>
+            <artifactId>ElementalBoosters</artifactId>
+            <version>0.2.4</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/lib/ElementalBoosters-0.2.4.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

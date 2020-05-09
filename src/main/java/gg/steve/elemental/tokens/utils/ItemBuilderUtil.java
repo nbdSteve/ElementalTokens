@@ -1,5 +1,6 @@
 package gg.steve.elemental.tokens.utils;
 
+import gg.steve.elemental.ce.nbt.NBTItem;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -20,6 +21,7 @@ public class ItemBuilderUtil {
     private Map<Enchantment, Integer> enchantments = new HashMap<>();
     private Set<ItemFlag> flags = new HashSet<>();
     private List<String> placeholders = new ArrayList<>();
+    private NBTItem nbtItem;
 
     public ItemBuilderUtil(ItemStack item) {
         this.item = item;
@@ -92,6 +94,11 @@ public class ItemBuilderUtil {
         item.setItemMeta(itemMeta);
     }
 
+    public void addNBT() {
+        nbtItem = new NBTItem(item);
+        nbtItem.setBoolean("tokens.gui.item", true);
+    }
+
     public void setItemMeta(ItemMeta itemMeta) {
         this.itemMeta = itemMeta;
     }
@@ -101,6 +108,9 @@ public class ItemBuilderUtil {
     }
 
     public ItemStack getItem() {
+        if (this.nbtItem != null) {
+            return this.nbtItem.getItem();
+        }
         return this.item;
     }
 

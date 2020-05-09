@@ -28,6 +28,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.15-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.25" level="project" />
     <orderEntry type="library" name="Maven: me.clip:placeholderapi:2.10.3" level="project" />
+    <orderEntry type="library" name="Maven: com.github.shynixn.headdatabase:hdb-api:1.0" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: gg.steve.elemental:Backpacks:0.9.6">
         <CLASSES>
@@ -41,6 +42,15 @@
       <library name="Maven: gg.steve.elemental:ElementalEnchants:0.1.1">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/lib/ElementalEnchants-0.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: gg.steve.elemental:ElementalBoosters:0.2.4">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/lib/ElementalBoosters-0.2.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

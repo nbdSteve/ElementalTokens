@@ -3,9 +3,12 @@ version: ${project.version}
 main: gg.steve.elemental.tokens.ElementalTokens
 api-version: 1.13
 prefix: Tokens
-depend: [PlaceholderAPI]
 authors: [stevegoodhill]
 description: Token currency plugin for ElementalMC.
+softdepend:
+  - PlaceholderAPI
+  - Featherboard
+  - HeadDatabase
 commands:
   tokens:
     usage: /<command>

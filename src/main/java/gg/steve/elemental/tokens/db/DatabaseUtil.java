@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class DatabaseUtil {
-    public static ConnectionManager connectionManager;
+    private static ConnectionManager connectionManager;
 
     public static ConnectionManager setupConnection() {
         ConfigurationSection section = Files.CONFIG.get().getConfigurationSection("database");
@@ -57,6 +57,7 @@ public class DatabaseUtil {
                 } else {
                     PlayerTokenManager.addTokenPlayer(player.getUniqueId(), 0, 0);
                 }
+                query.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -90,6 +91,7 @@ public class DatabaseUtil {
             } else {
                 PlayerTokenManager.addTokenPlayer(playerId, 0, 0);
             }
+            query.close();
             LogUtil.info("Successfully loaded token data for player: " + playerId + ".");
         } catch (SQLException e) {
             e.printStackTrace();

@@ -31,7 +31,6 @@ public final class ElementalTokens extends JavaPlugin {
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new ElementalTokensExpansion(instance).register();
         }
-        shopGui = new ShopGui(Files.CONFIG.get().getConfigurationSection("gui"));
     }
 
     @Override
@@ -50,6 +49,7 @@ public final class ElementalTokens extends JavaPlugin {
     }
 
     public static void openShopGui(Player player) {
+        if (shopGui == null) shopGui = new ShopGui(Files.CONFIG.get().getConfigurationSection("gui"));
         shopGui.open(player);
     }
 }

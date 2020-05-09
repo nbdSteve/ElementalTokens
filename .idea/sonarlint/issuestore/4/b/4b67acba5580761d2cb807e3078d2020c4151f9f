@@ -1,0 +1,7 @@
+
+[
+java:S3516"9Refactor this method to not always return the same value.(¼ß…ıüÿÿÿÿ8ôÖÁ.
+^
+java:S1128"ARemove this unused import 'com.google.gson.internal.$Gson$Types'.(‘‘ 8®Ğ¡.
+l
+java:S1128	"JRemove this unused import 'gg.steve.elemental.tokens.message.MessageType'.(Ï’çÃùÿÿÿÿ8ÖğôÅ.
