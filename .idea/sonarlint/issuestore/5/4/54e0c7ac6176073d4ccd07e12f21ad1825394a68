@@ -1,27 +1,21 @@
 
-E
-java:S1148N"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
-k
-java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‚Ö®L8ÄË.
+d
+java:S20957"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(˜Ûò‰8ó¹£¤.
 l
-java:S2095W"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ã¦‘š8ù´‚©.
-l
-java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ì£‚ä8»çì.
-l
-java:S2095G"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ëÅÏî8ÛŠØ.
-E
-java:S1148q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
-E
-java:S1148>"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
+java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ëÅÏî8’«õãŸ.
 W
-java:S1118":Add a private constructor to hide the implicit public one.(üŠåÜ8âı .
-d
-java:S20956"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(˜Ûò‰8ó¹£¤.
-d
-java:S2095X"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(˜Ûò‰8ó¹£¤.
+java:S1118":Add a private constructor to hide the implicit public one.(üŠåÜ8âı .
 E
-java:S1148*"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÄË.
+java:S1148+"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÄË.
 E
-java:S1148a"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
-l
-java:S20955"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‰€‚¾8£Â¼.
+java:S1148?"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
+k
+java:S20956"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìİï^8£Â¼.
+E
+java:S1148h"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
+E
+java:S1148Q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
+E
+java:S1148z"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼©¸ãŸ.
+k
+java:S2095'"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‚Ö®L8ÄË.

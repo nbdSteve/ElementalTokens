@@ -1,5 +1,6 @@
 package gg.steve.elemental.tokens.db;
 
+import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.core.PlayerTokenManager;
 import gg.steve.elemental.tokens.core.TokenType;
 import gg.steve.elemental.tokens.managers.Files;
@@ -50,7 +51,7 @@ public class DatabaseUtil {
         for (Player player : Bukkit.getOnlinePlayers()) {
             try {
                 LogUtil.info(player.getUniqueId().toString());
-                PreparedStatement query = connection.prepareStatement("SELECT * FROM tokens WHERE uuid='" + player.getUniqueId() + "'");
+                PreparedStatement query = connection.prepareStatement("SELECT * FROM `tokens` WHERE uuid='" + player.getUniqueId() + "'");
                 ResultSet rs = query.executeQuery();
                 if (rs.next()) {
                     PlayerTokenManager.addTokenPlayer(player.getUniqueId(), rs.getInt("balance"), rs.getInt("prestige"));
@@ -62,56 +63,66 @@ public class DatabaseUtil {
                 e.printStackTrace();
             }
         }
+        connectionManager.disconnect();
     }
 
     public static void saveTokenData() {
-        Connection connection = connectionManager.getConnection();
-        for (UUID uuid : PlayerTokenManager.getTokenPlayers().keySet()) {
-            try {
-                PreparedStatement set = connection.prepareStatement("REPLACE INTO tokens(uuid, balance, prestige) VALUES (?, ?, ?);");
-                set.setString(1, String.valueOf(uuid));
-                set.setInt(2, PlayerTokenManager.getTokens(uuid, TokenType.TOKEN));
-                set.setInt(3, PlayerTokenManager.getTokens(uuid, TokenType.PRESTIGE));
-                set.executeUpdate();
-                set.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+        synchronized (ElementalTokens.get()) {
+            Connection connection = connectionManager.getConnection();
+            for (UUID uuid : PlayerTokenManager.getTokenPlayers().keySet()) {
+                try {
+                    PreparedStatement set = connection.prepareStatement("REPLACE INTO tokens(uuid, balance, prestige) VALUES (?, ?, ?);");
+                    set.setString(1, String.valueOf(uuid));
+                    set.setInt(2, PlayerTokenManager.getTokens(uuid, TokenType.TOKEN));
+                    set.setInt(3, PlayerTokenManager.getTokens(uuid, TokenType.PRESTIGE));
+                    set.executeUpdate();
+                    set.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
+            connectionManager.disconnect();
+            PlayerTokenManager.clearPlayerMap();
+            LogUtil.info("All token data for players who have not yet disconnected has been saved.");
         }
-        LogUtil.info("All token data for players who have not yet disconnected has been saved.");
     }
 
     public static void loadPlayerTokenData(UUID playerId) {
-        Connection connection = connectionManager.getConnection();
-        try {
-            PreparedStatement query = connection.prepareStatement("SELECT * FROM tokens WHERE uuid='" + playerId + "'");
-            ResultSet rs = query.executeQuery();
-            if (rs.next()) {
-                PlayerTokenManager.addTokenPlayer(playerId, rs.getInt("balance"), rs.getInt("prestige"));
-            } else {
-                PlayerTokenManager.addTokenPlayer(playerId, 0, 0);
+        Bukkit.getScheduler().runTaskAsynchronously(ElementalTokens.get(), () -> {
+            Connection connection = connectionManager.getConnection();
+            try {
+                PreparedStatement query = connection.prepareStatement("SELECT * FROM `tokens` WHERE uuid='" + playerId + "'");
+                ResultSet rs = query.executeQuery();
+                if (rs.next()) {
+                    PlayerTokenManager.addTokenPlayer(playerId, rs.getInt("balance"), rs.getInt("prestige"));
+                } else {
+                    PlayerTokenManager.addTokenPlayer(playerId, 0, 0);
+                }
+                query.close();
+                LogUtil.info("Successfully loaded token data for player: " + playerId + ".");
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            query.close();
-            LogUtil.info("Successfully loaded token data for player: " + playerId + ".");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            connectionManager.disconnect();
+        });
     }
 
     public static void savePlayerTokenData(UUID playerId) {
-        Connection connection = connectionManager.getConnection();
-        try {
-            PreparedStatement set = connection.prepareStatement("REPLACE INTO " +
-                    "tokens(uuid, balance, prestige) VALUES (?, ?, ?);");
-            set.setString(1, String.valueOf(playerId));
-            set.setInt(2, PlayerTokenManager.getTokens(playerId, TokenType.TOKEN));
-            set.setInt(3, PlayerTokenManager.getTokens(playerId, TokenType.PRESTIGE));
-            set.executeUpdate();
-            set.close();
-            LogUtil.info("Successfully saved token data for player: " + playerId + ".");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        PlayerTokenManager.removeTokenPlayer(playerId);
+        Bukkit.getScheduler().runTaskAsynchronously(ElementalTokens.get(), () -> {
+            Connection connection = connectionManager.getConnection();
+            try {
+                PreparedStatement set = connection.prepareStatement("REPLACE INTO tokens(uuid, balance, prestige) VALUES (?, ?, ?);");
+                set.setString(1, String.valueOf(playerId));
+                set.setInt(2, PlayerTokenManager.getTokens(playerId, TokenType.TOKEN));
+                set.setInt(3, PlayerTokenManager.getTokens(playerId, TokenType.PRESTIGE));
+                set.executeUpdate();
+                set.close();
+                LogUtil.info("Successfully saved token data for player: " + playerId + ".");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            connectionManager.disconnect();
+            PlayerTokenManager.removeTokenPlayer(playerId);
+        });
     }
 }

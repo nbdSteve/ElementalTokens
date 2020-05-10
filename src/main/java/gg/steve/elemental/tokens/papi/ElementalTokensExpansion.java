@@ -42,13 +42,17 @@ public class ElementalTokensExpansion extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player player, String identifier) {
         if (player == null) return "";
-        TokenPlayer tPlayer = PlayerTokenManager.getTokenPlayer(player.getUniqueId());
-        if (identifier.equalsIgnoreCase("tokens")) {
-            return ElementalTokens.getNumberFormat().format(tPlayer.getTokens(TokenType.TOKEN));
+        try {
+            TokenPlayer tPlayer = PlayerTokenManager.getTokenPlayer(player.getUniqueId());
+            if (identifier.equalsIgnoreCase("tokens")) {
+                return ElementalTokens.getNumberFormat().format(tPlayer.getTokens(TokenType.TOKEN));
+            }
+            if (identifier.equalsIgnoreCase("prestige")) {
+                return ElementalTokens.getNumberFormat().format(tPlayer.getTokens(TokenType.PRESTIGE));
+            }
+        } catch (NullPointerException e) {
+            return "Loading...";
         }
-        if (identifier.equalsIgnoreCase("prestige")) {
-            return ElementalTokens.getNumberFormat().format(tPlayer.getTokens(TokenType.PRESTIGE));
-        }
-        return null;
+        return "0";
     }
 }

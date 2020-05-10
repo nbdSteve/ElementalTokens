@@ -73,6 +73,10 @@ public class PlayerTokenManager implements Listener {
         tokenPlayers.get(playerId).resetTokens(type);
     }
 
+    public static void clearPlayerMap() {
+        tokenPlayers.clear();
+    }
+
     @EventHandler
     public void playerJoin(PlayerJoinEvent event) {
         if (tokenPlayers.containsKey(event.getPlayer().getUniqueId())) return;

@@ -15,7 +15,6 @@ import java.text.DecimalFormat;
 
 public final class ElementalTokens extends JavaPlugin {
     private static ElementalTokens instance;
-    private static ConnectionManager database;
     private static DecimalFormat numberFormat = new DecimalFormat("#,###.##");
     private static ShopGui shopGui;
 
@@ -26,7 +25,7 @@ public final class ElementalTokens extends JavaPlugin {
         SetupManager.setupFiles(new FileManager(instance));
         SetupManager.registerCommands(instance);
         SetupManager.registerEvents(instance);
-        database = DatabaseUtil.setupConnection();
+        DatabaseUtil.setupConnection();
         // register placeholders with papi
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new ElementalTokensExpansion(instance).register();
@@ -37,7 +36,6 @@ public final class ElementalTokens extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         DatabaseUtil.saveTokenData();
-        database.disconnect();
     }
 
     public static ElementalTokens get() {
@@ -49,7 +47,11 @@ public final class ElementalTokens extends JavaPlugin {
     }
 
     public static void openShopGui(Player player) {
-        if (shopGui == null) shopGui = new ShopGui(Files.CONFIG.get().getConfigurationSection("gui"));
+        if (shopGui == null) {
+            shopGui = new ShopGui(Files.CONFIG.get().getConfigurationSection("gui"));
+        } else {
+            shopGui.refresh();
+        }
         shopGui.open(player);
     }
 }

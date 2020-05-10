@@ -1,5 +1,7 @@
 package gg.steve.elemental.tokens.db;
 
+import gg.steve.elemental.tokens.ElementalTokens;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,11 +20,13 @@ public class ConnectionManager {
     }
 
     public void connect() {
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Could not connect?
+        synchronized (ElementalTokens.get()) {
+            try {
+                connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Could not connect?
+            }
         }
     }
 

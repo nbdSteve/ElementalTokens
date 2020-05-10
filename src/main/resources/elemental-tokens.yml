@@ -59,8 +59,8 @@ gui:
   4:
     slot: 26
     action: close
-    name: '&c&lExit'
-    material: barrier
+    name: '&c&lClose'
+    material: hdb-187
     data: 0
     lore:
       - '&7'
