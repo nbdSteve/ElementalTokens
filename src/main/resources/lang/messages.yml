@@ -1,36 +1,36 @@
 balance:
-  - '&5&lTokens &f>> &7You current &6{token-type} &7balance is &e&l{amount} &7tokens.'
+  - '&b&lTokens &f» &7You current &a{token-type} &7balance is &a&l{amount} &7tokens.'
 
 pay-payer:
-  - '&5&lTokens &f>> &7You have payed &6{player} &e&l{amount} &6{token-type} &7tokens.'
+  - '&b&lTokens &f» &7You have payed &a{player} &a&l{amount} &a{token-type} &7tokens.'
 
 pay-receiver:
-  - '&5&lTokens &f>> &7You have received &e&l{amount} &6{token-type} &7tokens from &6{player}.'
+  - '&b&lTokens &f» &7You have received &a&l{amount} &a{token-type} &7tokens from &a{player}.'
 
 help:
-  - '&5&lTokens &f>> &7Please contact nbdSteve#0583 on discord for command, permission and configuration help.'
+  - '&b&lTokens &f» &7Please contact nbdSteve#0583 on discord for command, permission and configuration help.'
 
 reload:
-  - '&5&lTokens &f>> &7You have successfully reloaded the plugin and player data.'
+  - '&b&lTokens &f» &7You have successfully reloaded the plugin and player data.'
 
 insufficient-tokens:
-  - '&5&lTokens &f>> &7You do not have sufficient &6{token-type} &7tokens to complete that action.'
+  - '&b&lTokens &f» &7You do not have sufficient &a{token-type} &7tokens to complete that action.'
 
 balance-update-giver:
-  - "&5&lTokens &f>> &7You have updated &6{player}&7's &6{token-type} &7balance, new balance: &e&l{amount}&7."
+  - "&b&lTokens &f» &7You have updated &a{player}&7's &a{token-type} &7balance, new balance: &a&l{amount}&7."
 
 balance-update-receiver:
-  - '&5&lTokens &f>> &7Your &6{token-type} &7balance has been updated, new balance: &e&l{amount}&7.'
+  - '&b&lTokens &f» &7Your &a{token-type} &7balance has been updated, new balance: &a&l{amount}&7.'
 
 mine-add-tokens:
-  - '&5&lTokens &f>> &7You just found &e&l{found}x &6{token-type} &7while mining, new balance: &e&l{amount}&7.'
+  - '&b&lTokens &f» &7You just found &a&l{found}x &a{token-type} &7while mining, new balance: &a&l{amount}&7.'
 
 tokenator-add-tokens:
-  - '&5&lTokens &f>> &6Tokenator &7has proced and doubled your found tokens, you found &e&l{found}x &6{token-type} &7while mining, new balance: &e&l{amount}&7.'
+  - '&b&lTokens &f» &aTokenator &7has proced and doubled your found tokens, you found &a&l{found}x &a{token-type} &7while mining, new balance: &a&l{amount}&7.'
 
 admin:
   help:
-    - '&5&lTokens &f>> &7/eta set, reset, remove, add, bal player token-type amount'
+    - '&b&lTokens &f» &7/eta set, reset, remove, add, bal player token-type amount'
   #
   balance:
-    - '&5&lTokens &f>> &7The player &6{player} &7has a balance of &e&l{amount} &6{token-type} &7tokens.'
+    - '&b&lTokens &f» &7The player &a{player} &7has a balance of &a&l{amount} &a{token-type} &7tokens.'

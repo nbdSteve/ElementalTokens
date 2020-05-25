@@ -1,21 +1,21 @@
 
-d
-java:S20957"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(˜Ûò‰8ó¹£¤.
-l
-java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ëÅÏî8’«õãŸ.
-W
-java:S1118":Add a private constructor to hide the implicit public one.(üŠåÜ8âı .
 E
 java:S1148+"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÄË.
+d
+java:S20956"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(˜Ûò‰8ó¹£¤.
+l
+java:S2095I"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ëÅÏî8’«õãŸ.
 E
-java:S1148?"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
+java:S1148y"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼©¸ãŸ.
+E
+java:S1148>"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
 k
-java:S20956"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìİï^8£Â¼.
+java:S20955"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìİï^8£Â¼.
 E
-java:S1148h"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
+java:S1148P"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
 E
-java:S1148Q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
-E
-java:S1148z"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼©¸ãŸ.
+java:S1148g"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¹£¤.
 k
 java:S2095'"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‚Ö®L8ÄË.
+W
+java:S1118":Add a private constructor to hide the implicit public one.(üŠåÜ8âı .

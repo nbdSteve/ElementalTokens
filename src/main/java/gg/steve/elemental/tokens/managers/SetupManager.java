@@ -34,7 +34,7 @@ public class SetupManager {
 
     public static void registerCommands(ElementalTokens instance) {
         instance.getCommand("tokens").setExecutor(new TokensCmd());
-        instance.getCommand("prestige").setExecutor(new PrestigeCmd());
+        instance.getCommand("ptoken").setExecutor(new PrestigeCmd());
         instance.getCommand("eta").setExecutor(new AdminCmd());
         instance.getCommand("tshop").setExecutor(new GuiCmd());
     }

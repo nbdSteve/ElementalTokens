@@ -50,7 +50,6 @@ public class DatabaseUtil {
         Connection connection = connectionManager.getConnection();
         for (Player player : Bukkit.getOnlinePlayers()) {
             try {
-                LogUtil.info(player.getUniqueId().toString());
                 PreparedStatement query = connection.prepareStatement("SELECT * FROM `tokens` WHERE uuid='" + player.getUniqueId() + "'");
                 ResultSet rs = query.executeQuery();
                 if (rs.next()) {

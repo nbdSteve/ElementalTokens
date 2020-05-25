@@ -15,11 +15,10 @@ commands:
     description: View your token balance, or /tokens pay <player>.
     aliases:
       - token
-  prestige:
+  ptoken:
     usage: /<command>
     description: View your prestige token balance, or /prestige pay <player>.
     aliases:
-      - ptoken
       - ptokens
   eta:
     usage: /<command>
